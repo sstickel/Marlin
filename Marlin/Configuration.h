@@ -565,8 +565,8 @@
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
 #define Z2_DRIVER_TYPE DRV8825
-//#define E0_DRIVER_TYPE A4988
-//#define E1_DRIVER_TYPE A4988
+#define E0_DRIVER_TYPE DRV8825
+#define E1_DRIVER_TYPE DRV8825
 //#define E2_DRIVER_TYPE A4988
 //#define E3_DRIVER_TYPE A4988
 //#define E4_DRIVER_TYPE A4988
@@ -619,7 +619,8 @@
  */
 
 // Reptile direktantrieb Extruder  140
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 803, 1290 } //Reptile Kugelumlauf Spindel , Getriebe Extruder
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 803, 1290 } // Reptile Kugelumlauf Spindel , Getriebe Extruder
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 1606, 2580 } // Same same but DRV8825 -> 1/32
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 4000, 500 }
 
 /**
@@ -898,8 +899,8 @@
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
-#define X_MAX_POS 360
-#define Y_MAX_POS 380
+#define X_MAX_POS 355
+#define Y_MAX_POS 345
 #define Z_MAX_POS 250
 
 /**
