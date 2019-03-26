@@ -621,7 +621,7 @@
 
 // Reptile direktantrieb Extruder  140
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 803, 1290 } // Reptile Kugelumlauf Spindel , Getriebe Extruder
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 1606, 2838 } // Same same but DRV8825 -> 1/32
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 1606, 2580 } // Same same but DRV8825 -> 1/32
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 4000, 500 }
 
 /**
@@ -637,7 +637,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 2000, 2000, 50, 10000 }
+#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 50, 10000 }
 
 /**
  * Default Acceleration (change/s) change = mm/s
