@@ -900,8 +900,8 @@
 #define X_MAX_POS 311
 #define X_MIN_POS -44
 
-#define Y_MAX_POS 326
-#define Y_MIN_POS -19
+#define Y_MAX_POS 225
+#define Y_MIN_POS -120
 
 #define Z_MIN_POS 0
 #define Z_MAX_POS 250
