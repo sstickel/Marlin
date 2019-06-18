@@ -619,9 +619,9 @@
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
 
-// Reptile direktantrieb Extruder  140
-//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 803, 1290 } // Reptile Kugelumlauf Spindel , Getriebe Extruder
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 1606, 4000} // Same same but DRV8825 -> 1/32
+// Reptile Kugelumlauf Spindel , Getriebe Extruder, 1/16 steps
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 803, 2000 } 
+
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 4000, 500 }
 
 /**
@@ -1036,7 +1036,7 @@
 #if ENABLED(AUTO_BED_LEVELING_LINEAR) || ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 5
+  #define GRID_MAX_POINTS_X 3
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Set the boundaries for probing (where the probe can reach).
