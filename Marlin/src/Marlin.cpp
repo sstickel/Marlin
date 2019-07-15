@@ -57,6 +57,10 @@
 #include "gcode/parser.h"
 #include "gcode/queue.h"
 
+#if ENABLED(TOUCH_BUTTONS)
+  #include "feature/touch/xpt2046.h"
+#endif
+
 #if ENABLED(HOST_ACTION_COMMANDS)
   #include "feature/host_actions.h"
 #endif
@@ -153,7 +157,7 @@
   #include "feature/fanmux.h"
 #endif
 
-#if DO_SWITCH_EXTRUDER || ANY(SWITCHING_NOZZLE, PARKING_EXTRUDER, MAGNETIC_PARKING_EXTRUDER)
+#if DO_SWITCH_EXTRUDER || ANY(SWITCHING_NOZZLE, PARKING_EXTRUDER, MAGNETIC_PARKING_EXTRUDER, ELECTROMAGNETIC_SWITCHING_TOOLHEAD)
   #include "module/tool_change.h"
 #endif
 
@@ -860,7 +864,7 @@ void setup() {
 
   setup_killpin();
 
-  #if HAS_DRIVER(TMC2208) || HAS_DRIVER(TMC2209)
+  #if HAS_TMC220x
     tmc_serial_begin();
   #endif
 
@@ -941,7 +945,11 @@ void setup() {
 
   // Load data from EEPROM if available (or use defaults)
   // This also updates variables in the planner, elsewhere
-  (void)settings.load();
+  settings.first_load();
+
+  #if ENABLED(TOUCH_BUTTONS)
+    touch.init();
+  #endif
 
   #if HAS_M206_COMMAND
     // Initialize current position based on home_offset
@@ -1076,6 +1084,10 @@ void setup() {
 
   #if ENABLED(PARKING_EXTRUDER)
     pe_solenoid_init();
+  #endif
+
+  #if ENABLED(ELECTROMAGNETIC_SWITCHING_TOOLHEAD)
+    est_init();
   #endif
 
   #if ENABLED(POWER_LOSS_RECOVERY)
