@@ -399,12 +399,12 @@
 
     #elif ENABLED(ZONESTAR_LCD)
 
-      #define LCD_PINS_RS       64
-      #define LCD_PINS_ENABLE   44
-      #define LCD_PINS_D4       63
-      #define LCD_PINS_D5       40
-      #define LCD_PINS_D6       42
-      #define LCD_PINS_D7       65
+      #define LCD_PINS_RS       25
+      #define LCD_PINS_ENABLE   16
+      #define LCD_PINS_D4       27
+      #define LCD_PINS_D5       23
+      #define LCD_PINS_D6       17
+      #define LCD_PINS_D7       37
 
     #else
 
