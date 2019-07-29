@@ -606,7 +606,7 @@
 
     #elif ENABLED(ZONESTAR_LCD)
 
-      #define ADC_KEYPAD_PIN    12
+      #define ADC_KEYPAD_PIN    -1
 
     #elif ENABLED(AZSMZ_12864)
 
