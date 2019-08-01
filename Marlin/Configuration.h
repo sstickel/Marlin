@@ -1055,15 +1055,15 @@
 
 
 // The size of the print bed
-#define X_BED_SIZE 200
+#define X_BED_SIZE 215
 #define Y_BED_SIZE 300
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -30
-#define Y_MIN_POS -15
+#define X_MIN_POS -35
+#define Y_MIN_POS -22
 #define Z_MIN_POS 0
 #define X_MAX_POS 205
-#define Y_MAX_POS 320
+#define Y_MAX_POS 313
 #define Z_MAX_POS 200
 
 /**
@@ -1213,7 +1213,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
+  #define GRID_MAX_POINTS_X 5
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Set the boundaries for probing (where the probe can reach).
@@ -1235,7 +1235,7 @@
     // Experimental Subdivision of the grid by Catmull-Rom method.
     // Synthesizes intermediate points to produce a more detailed mesh.
     //
-    //#define ABL_BILINEAR_SUBDIVISION
+    #define ABL_BILINEAR_SUBDIVISION
     #if ENABLED(ABL_BILINEAR_SUBDIVISION)
       // Number of subdivisions between probe points
       #define BILINEAR_SUBDIVISIONS 3
